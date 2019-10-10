@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Ammar\Downloads\Test C ++ Files\Expenses Calculator\Expenses Calculator\Source.cpp(48,66): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ammar\Downloads\Test C ++ Files\Expenses Calculator\Expenses Calculator\Source.cpp(68,45): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+  Expenses Calculator.vcxproj -> C:\Users\Ammar\Downloads\Test C ++ Files\Expenses Calculator\Debug\Expenses Calculator.exe
