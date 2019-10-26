@@ -1,75 +1,115 @@
 #include <iostream>
 using namespace std;
 
+double DoorDash(double payPerOrder, int daysOfDoorDashing, int OrdersPerDash) {
+
+	double netAmount = (payPerOrder * OrdersPerDash) * daysOfDoorDashing;
+
+	return netAmount;
+}
+
 int main() {
 
-	double currentBalance;
-	double totalIncome;
-	double creditCardCosts;
-	double pendingAmount;
-	double randomCosts;
+	char mainIdentifier = 'y';
 
-	cout << "How much money is in your bank account right now?" << endl;
-	cin >> currentBalance;
+	while (mainIdentifier != 'n') {
 
-	cout << "What is the amount of income you want to include excluding monthly incomes?" << endl;
-	cin >> totalIncome;
+		double currentBalance;
+		double totalIncome;
+		double creditCardCosts;
+		double pendingAmount;
+		double randomCosts;
+		double doorDashNetAmount;
 
-	char identifier;
+		cout << "How much money is in your bank account right now?" << endl;
+		cin >> currentBalance;
 
-	cout << "Do you have any monthly incomes you want to include? Type y or n" << endl;
-	cin >> identifier;
+		cout << "What is the amount of income you want to include excluding monthly incomes?" << endl;
+		cin >> totalIncome;
 
-	if (identifier == 'y') {
+		char DDIdentifier;
 
-		int months;
+		cout << "Do you want to calculate Doordash? Type y or n"
+		cin >> DDIdentifier;
 
-		cout << "How many months do you want to calculate income for?" << endl;
-		cin >> months;
+		if (DDIdentifier == 'y') {
 
-		double earningPerMonth;
+			double payPerDash;
+			int daysOfDashing;
+			int ordersPerDash;
 
-		cout << "How much do you earn each month?" << endl;
-		cin >> earningPerMonth;
+			cout << "How much money do you receive per order?" << endl;
+			cin >> payPerDash;
 
-		double totalIncomeMonthly = months * earningPerMonth;
+			cout << "How many days of dashing will you be calculating for?" << endl;
+			cin >> daysOfDashing;
 
-		cout << "How much do you owe on your credit card?" << endl;
-		cin >> creditCardCosts;
+			cout << "How many orders do you complete per dash?" << endl;
+			cin >> ordersPerDash;
 
-		cout << "How much is pending on your credit card account?" << endl;
-		cin >> pendingAmount;
+			doorDashNetAmount = DoorDash(payPerDash, daysOfDashing, ordersPerDash);
+		}
 
-		cout << "What is the total of your other costs not including your credit card?" << endl;
-		cin >> randomCosts;
+		char identifier;
 
-		int endValue;
+		cout << "Do you have any monthly incomes you want to include? Type y or n" << endl;
+		cin >> identifier;
 
-		endValue = (currentBalance + totalIncome + totalIncomeMonthly) - (randomCosts + creditCardCosts + pendingAmount);
+		if (identifier == 'y') {
 
-		cout << "Your calculated bank account balance: " << endValue << endl;
+			int months;
 
-		return(0);
+			cout << "How many months do you want to calculate income for?" << endl;
+			cin >> months;
+
+			double earningPerMonth;
+
+			cout << "How much do you earn each month?" << endl;
+			cin >> earningPerMonth;
+
+			double totalIncomeMonthly = months * earningPerMonth;
+
+			cout << "How much do you owe on your credit card?" << endl;
+			cin >> creditCardCosts;
+
+			cout << "How much is pending on your credit card account?" << endl;
+			cin >> pendingAmount;
+
+			cout << "What is the total of your other costs not including your credit card?" << endl;
+			cin >> randomCosts;
+
+			int endValue;
+
+			endValue = (currentBalance + totalIncome + totalIncomeMonthly) - (randomCosts + creditCardCosts + pendingAmount);
+
+			cout << "Your calculated bank account balance: " << endValue << endl;
+
+			return(0);
+
+		}
+		else if (identifier == 'n') {
+
+			cout << "How much do you owe on your credit card?" << endl;
+			cin >> creditCardCosts;
+
+			cout << "How much is pending on your credit card account?" << endl;
+			cin >> pendingAmount;
+
+			cout << "What is the total of your other costs not including your credit card?" << endl;
+			cin >> randomCosts;
+
+			double endValue;
+
+			endValue = (currentBalance + totalIncome + doorDashNetAmount) - (randomCosts + creditCardCosts + pendingAmount);
+
+			cout << "Your calculated bank account balance: " << endValue << endl;
+
+		}
+
+		cout << "Do you want to calculate again?" << endl;
+		cin >> mainIdentifier;
 
 	}
-	else if (identifier == 'n') {
 
-		cout << "How much do you owe on your credit card?" << endl;
-		cin >> creditCardCosts;
-
-		cout << "How much is pending on your credit card account?" << endl;
-		cin >> pendingAmount;
-
-		cout << "What is the total of your other costs not including your credit card?" << endl;
-		cin >> randomCosts;
-
-		int endValue;
-
-		endValue = (currentBalance + totalIncome) - (randomCosts + creditCardCosts + pendingAmount);
-
-		cout << "Your calculated bank account balance: " << endValue << endl;
-
-		return(0);
-
-	}
+	return 0;
 }
