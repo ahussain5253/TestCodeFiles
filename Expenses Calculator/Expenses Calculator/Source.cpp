@@ -1,13 +1,6 @@
 #include <iostream>
 using namespace std;
 
-double DoorDash(double payPerOrder, int daysOfDoorDashing, int OrdersPerDash) {
-
-	double netAmount = (payPerOrder * OrdersPerDash) * daysOfDoorDashing;
-
-	return netAmount;
-}
-
 int main() {
 
 	char mainIdentifier = 'y';
@@ -29,25 +22,49 @@ int main() {
 
 		char DDIdentifier;
 
-		cout << "Do you want to calculate Doordash? Type y or n"
+		cout << "Calculate Doordash?" << endl;
 		cin >> DDIdentifier;
 
 		if (DDIdentifier == 'y') {
 
-			double payPerDash;
-			int daysOfDashing;
+			double payPerOrder;
+			int daysOrWeeksOfDashing;
 			int ordersPerDash;
+			char dOrWIdentifier;
+			int ordersPerWeek;
+			int days;
 
-			cout << "How much money do you receive per order?" << endl;
-			cin >> payPerDash;
+			cout << "Do you want to calculate weeks or days? Type w or d" << endl;
+			cin >> dOrWIdentifier;
 
-			cout << "How many days of dashing will you be calculating for?" << endl;
-			cin >> daysOfDashing;
+			if (dOrWIdentifier == 'w') {
 
-			cout << "How many orders do you complete per dash?" << endl;
-			cin >> ordersPerDash;
+				cout << "How many weeks of dashing will you be calculating for?" << endl;
+				cin >> daysOrWeeksOfDashing;
 
-			doorDashNetAmount = DoorDash(payPerDash, daysOfDashing, ordersPerDash);
+				cout << "How much money do you receive per order?" << endl;
+				cin >> payPerOrder;
+
+				cout << "How many orders do you complete per week?" << endl;
+				cin >> ordersPerWeek;
+
+				doorDashNetAmount = (ordersPerWeek * payPerOrder) * daysOrWeeksOfDashing;
+
+			}
+			else {
+
+				cout << "How many days of dashing will you be calculating for?" << endl;
+				cin >> daysOrWeeksOfDashing;
+
+				cout << "How many orders do you complete for one day of dashing?" << endl;
+				cin >> ordersPerDash;
+
+				cout << "How much money do you receive per order?" << endl;
+				cin >> payPerOrder;
+
+				doorDashNetAmount = (payPerOrder * ordersPerDash) * daysOrWeeksOfDashing;
+
+			}
 		}
 
 		char identifier;
@@ -80,7 +97,7 @@ int main() {
 
 			int endValue;
 
-			endValue = (currentBalance + totalIncome + totalIncomeMonthly) - (randomCosts + creditCardCosts + pendingAmount);
+			endValue = (currentBalance + totalIncome + totalIncomeMonthly + doorDashNetAmount) - (randomCosts + creditCardCosts + pendingAmount);
 
 			cout << "Your calculated bank account balance: " << endValue << endl;
 
@@ -99,17 +116,30 @@ int main() {
 			cin >> randomCosts;
 
 			double endValue;
+			double CreditCard = creditCardCosts + pendingAmount;
 
 			endValue = (currentBalance + totalIncome + doorDashNetAmount) - (randomCosts + creditCardCosts + pendingAmount);
 
-			cout << "Your calculated bank account balance: " << endValue << endl;
+			cout << endl;
+			cout << "Your calculated bank account balance: " << endValue << endl << endl;
+
+			cout << "Breakdown:" << endl << endl;
+			cout << "Income excluding doordash:" << totalIncome << endl;
+			cout << "Income from doordash: " << doorDashNetAmount << endl;
+			cout << "Credit card costs: " << CreditCard << endl;
+			cout << "Other cost(s): " << randomCosts << endl;
+
 
 		}
 
+		cout << endl;
 		cout << "Do you want to calculate again?" << endl;
 		cin >> mainIdentifier;
 
 	}
+
+	cout << endl;
+	cout << "Thank you and have a great day!" << endl;
 
 	return 0;
 }
