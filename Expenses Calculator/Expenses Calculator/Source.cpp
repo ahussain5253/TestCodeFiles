@@ -17,7 +17,7 @@ int main() {
 		cout << "How much money is in your bank account right now?" << endl;
 		cin >> currentBalance;
 
-		cout << "What is the amount of income you want to include excluding monthly incomes?" << endl;
+		cout << "What is the amount of income you want to include excluding monthly incomes and Doordash?" << endl;
 		cin >> totalIncome;
 
 		char DDIdentifier;
@@ -124,7 +124,7 @@ int main() {
 			cout << "Your calculated bank account balance: " << endValue << endl << endl;
 
 			cout << "Breakdown:" << endl << endl;
-			cout << "Income excluding doordash:" << totalIncome << endl;
+			cout << "Income excluding doordash: " << totalIncome << endl;
 			cout << "Income from doordash: " << doorDashNetAmount << endl;
 			cout << "Credit card costs: " << CreditCard << endl;
 			cout << "Other cost(s): " << randomCosts << endl;
