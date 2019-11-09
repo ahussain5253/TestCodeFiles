@@ -12,7 +12,7 @@ int main() {
 		double creditCardCosts;
 		double pendingAmount;
 		double randomCosts;
-		double doorDashNetAmount;
+		double doorDashNetAmount = 0;
 
 		cout << "How much money is in your bank account right now?" << endl;
 		cin >> currentBalance;
