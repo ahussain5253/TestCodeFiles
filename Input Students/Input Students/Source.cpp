@@ -7,21 +7,21 @@ class Student {
 
 public:
 	
-	void SetNameAgeGrade(string name, int age, int grade);
+	Student(string name, int age, int grade);
 	void GetRundown();
 
 private:
 
-	string studentName;
-	int studentAge;
-	int studentGrade;
+	string name;
+	int age;
+	int grade;
 };
 
-void Student::SetNameAgeGrade(string name, int age, int grade) {
+Student::Student(string name, int age, int grade) {
 
-	studentName = name;
-	studentAge = age;
-	studentGrade = grade;
+	this->name = name;
+	this->age = age;
+	this->grade = grade;
 
 }
 
@@ -33,13 +33,35 @@ void Student::GetRundown() {
 }
 
 
-
-
-
-
 int main() {
 
-		
+	vector<Student> Students;
+
+	char identifier = 'y';
+	int i = 0;
+
+	while (identifier == 'y') {
+
+		string name;
+		int age;
+		int grade;
+
+		cout << "Name?" << endl;
+		cin >> name;
+
+		cout << "Age?" << endl;
+		cin >> age;
+
+		cout << "Grade?" << endl;
+		cin >> grade;
+
+		Students.at(i) = Student student(name, age, grade);
+
+		i++;
+
+		cout << "Again? y/n" << endl;
+		cin >> identifier;
+	}
 
 	
 

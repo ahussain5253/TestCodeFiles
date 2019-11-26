@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Average Calculator",
-    "\\Expenses Calculator",
-    "\\Expenses Calculator\\Expenses Calculator",
-    "\\Farenheit to Celcius",
-    "\\What year you were born"
+    "\\Average Calculator\\Average Calculator",
+    "\\Input Students",
+    "\\Input Students\\Input Students"
   ],
-  "SelectedNode": "\\Expenses Calculator\\Expenses Calculator\\Source.cpp",
+  "SelectedNode": "\\Input Students\\Input Students\\Source.cpp",
   "PreviewInSolutionExplorer": false
 }
