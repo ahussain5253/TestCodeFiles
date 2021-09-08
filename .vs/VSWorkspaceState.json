@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
-    "\\Average Calculator\\Average Calculator",
+    "",
     "\\Farenheit to Celcius",
     "\\Farenheit to Celcius\\Farenheit to Celcius",
-    "\\Input Students\\Input Students"
+    "\\Sample",
+    "\\WagesCalculator",
+    "\\WagesCalculator\\WagesCalculator"
   ],
+  "SelectedNode": "\\WagesCalculator\\WagesCalculator\\Source.cpp",
   "PreviewInSolutionExplorer": false
 }
