@@ -1,35 +1,54 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
 #include <vector>
 #include <string>
-
 using namespace std;
 
+vector<string> doSomething(vector<string> A) {
 
+	for (int i = A.size() - 1; i >= 0; i--) {
 
-int main() {
+		bool wasFound = false;
 
-	string hex = "2000000000";
+		for (int j = i - 1; j >= 0; j--) {
 
-	unsigned long long = stoull(hex);
+			if (A.at(i) == A.at(j)) {
 
-	cout << num;
+				A.erase(A.begin() + j);
+				wasFound = true;
+				i--;
 
+			}
 
-	/*
-	vector<char> dec;
+		}
+		if (!wasFound) {
 
-	for (int i = 0; i < hex.length(); i++) {
+			A.erase(A.begin() + i);
 
-		dec.push_back(hex.at(i));
+		}
 
 	}
 
-	for (int i = 0; i < dec.size(); i++) {
-
-		cout << dec.at(i);
-
-	}
-
-	*/
-
+	return A;
 }
+
+	int main() {
+
+		vector<string> animals = { "giraffe", "cat", "bat", "dog", "dog", "cat", "rat", "giraffe", "giraffe", " snake" };
+
+		animals.push
+
+		doSomething(animals);
+
+		for (int i = 0; i < animals.size(); i++) {
+
+			cout << animals.at(i) << " ";
+
+		}
+
+	}
+		 
+
+
