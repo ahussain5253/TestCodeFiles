@@ -14,4 +14,4 @@ int main() {
 	cout << " When it is " << degreesFar << " degress Farenheit outside, it is " << degreesCel << " degrees Celcius as well." << endl;
 
 	return 0;
-}
+} 
